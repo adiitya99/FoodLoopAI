@@ -1,3 +1,4 @@
+﻿import os
 
 
 import html
@@ -5,7 +6,7 @@ import html
 import requests
 import streamlit as st
 
-API_BASE = "http://127.0.0.1:8000"
+API_BASE = os.getenv("API_BASE_URL", "http://127.0.0.1:8000").rstrip("/")
 CATEGORIES = ["prepared_meal", "bakery", "produce", "packaged"]
 
 st.set_page_config(
@@ -862,5 +863,6 @@ st.caption(
     "it does not certify food safety, recipient consent or delivery. "
     "Meal equivalents are illustrative estimates, not measured outcomes."
 )
+
 
 
